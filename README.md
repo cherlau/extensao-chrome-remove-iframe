@@ -3,7 +3,6 @@
 
 ### 🔧 Instalação
 
-Diga como essa etapa será:
 
 ```
 git clone git@github.com:cherlau/extensao-chrome-remove-iframe.git

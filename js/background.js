@@ -7,10 +7,9 @@ function removeIframe(tabId) {
     chrome.scripting.executeScript({
         target: { tabId: tabId },
         func: () => {
-            const iframe = document.getElementById('webpack-dev-server-client-overlay');
             const body = document.querySelector('body');
 
-            if (iframe) {
+            if (!body.classList.contains('hide-iframe')) {
                 body.classList.add('hide-iframe');
             }
         }
@@ -29,10 +28,9 @@ function stopIframeRemoval(tabId) {
     chrome.scripting.executeScript({
         target: { tabId: tabId },
         func: () => {
-            const iframe = document.getElementById('webpack-dev-server-client-overlay');
             const body = document.querySelector('body');
 
-            if (iframe) {
+            if (body.classList.contains('hide-iframe')) {
                 body.classList.remove('hide-iframe');
             }
         }
